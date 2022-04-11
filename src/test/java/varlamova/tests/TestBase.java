@@ -25,7 +25,8 @@ public class TestBase {
 
         Configuration.browser = browserName;
         Configuration.browserVersion = browserVersion;
-        Configuration.baseUrl = config.getBaseUrl();
+//        Configuration.baseUrl = config.getBaseUrl();
+        Configuration.baseUrl = "https://vkusvill.ru/";
         Configuration.browserSize = browserResolution;
         String url = System.getProperty("url");
 
