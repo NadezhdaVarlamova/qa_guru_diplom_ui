@@ -17,7 +17,7 @@ public interface TestsConfig extends Config {
     String getBrowserVersion();
 
     @Key("baseUrl")
-    @DefaultValue("https://unicom24.ru/")
+    @DefaultValue("https://vkusvill.ru/")
     String getBaseUrl();
 
     @Key("resolution")
