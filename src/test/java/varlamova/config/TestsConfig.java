@@ -1,6 +1,5 @@
 package varlamova.config;
 
-import com.codeborne.selenide.Browser;
 import org.aeonbits.owner.Config;
 
 @Config.Sources("classpath:credentials.properties")

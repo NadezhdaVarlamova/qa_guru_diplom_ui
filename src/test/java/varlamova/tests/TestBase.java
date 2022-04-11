@@ -12,7 +12,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import varlamova.config.TestsConfig;
 import varlamova.helpers.Attach;
 
-import static com.codeborne.selenide.Configuration.browserVersion;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
