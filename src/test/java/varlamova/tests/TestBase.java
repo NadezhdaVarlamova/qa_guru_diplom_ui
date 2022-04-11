@@ -27,13 +27,16 @@ public class TestBase {
         Configuration.browserVersion = browserVersion;
         Configuration.baseUrl = config.getBaseUrl();
         Configuration.browserSize = browserResolution;
+        String url = System.getProperty("url");
 
         if (config.getRemote()){
             String selenoidLogin = config.selenoidLogin(),
                     selenoidPassword = config.selenoidPassword();
 
-            Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
-                    selenoidLogin, selenoidPassword);
+//            Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
+//                    selenoidLogin, selenoidPassword);
+            String remote = "https://" + selenoidLogin + ":" + selenoidPassword + "@" + url;
+            Configuration.remote = remote;
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
