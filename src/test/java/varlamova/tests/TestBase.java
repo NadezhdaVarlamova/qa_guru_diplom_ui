@@ -17,30 +17,34 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
     @BeforeAll
-    static void setUp(){
-        String login = System.getProperty("login", "user1");
-        String password = System.getProperty("password", "1234");
-        String url = System.getProperty("url");
-        String browser = System.getProperty("browser", "chrome1");
-        String version = System.getProperty("version", "92");
+    static void setUp(){TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
 
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        String browserName = String.valueOf(config.getBrowser());
+        String browserVersion = config.getBrowserVersion();
+        String browserResolution = config.getResolution();
 
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.browser = browser;
-        browserVersion = version;
-        String remote = "https://" + login + ":" + password + "@" + url;
-        Configuration.remote = remote;
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browser = browserName;
+        Configuration.browserVersion = browserVersion;
+        Configuration.baseUrl = config.getBaseUrl();
+        Configuration.browserSize = browserResolution;
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
+        if (config.getRemote()){
+            String selenoidLogin = config.selenoidLogin(),
+                    selenoidPassword = config.selenoidPassword();
 
-        Attach.attachAsText("Browser: ", browser);
-        Attach.attachAsText("Version: ", version);
+            Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
+                    selenoidLogin, selenoidPassword);
+
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
+        }
+
+        Attach.attachAsText("Browser: ", browserName);
+        Attach.attachAsText("Version: ", browserVersion);
+        Attach.attachAsText("Remote: ", String.valueOf(config.getRemote()));
+        Attach.attachAsText("Login: ", config.selenoidLogin());
     }
 
     @AfterEach

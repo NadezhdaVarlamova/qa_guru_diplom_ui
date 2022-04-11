@@ -7,7 +7,7 @@ import varlamova.pages.DairyProductsVVPage;
 import varlamova.pages.MainVVPage;
 import varlamova.pages.SearchVVPage;
 
-public class VVTests {
+public class VVTests extends TestBase{
     @Test
     @Story("Главная страница ВкусВилл")
     @Feature("UI тесты vkusvill.ru")
