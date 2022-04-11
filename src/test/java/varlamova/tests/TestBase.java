@@ -12,43 +12,35 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import varlamova.config.TestsConfig;
 import varlamova.helpers.Attach;
 
+import static com.codeborne.selenide.Configuration.browserVersion;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
     @BeforeAll
     static void setUp(){
-        TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
-
-        String browserName = String.valueOf(config.getBrowser());
-        String browserVersion = config.getBrowserVersion();
-        String browserResolution = config.getResolution();
-
-        Configuration.browser = browserName;
-        Configuration.browserVersion = browserVersion;
-//        Configuration.baseUrl = config.getBaseUrl();
-        Configuration.baseUrl = "https://vkusvill.ru/";
-        Configuration.browserSize = browserResolution;
+        String login = System.getProperty("login", "user1");
+        String password = System.getProperty("password", "1234");
         String url = System.getProperty("url");
+        String browser = System.getProperty("browser", "chrome1");
+        String version = System.getProperty("version", "92");
 
-        if (config.getRemote()){
-            String selenoidLogin = config.selenoidLogin(),
-                    selenoidPassword = config.selenoidPassword();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-//            Configuration.remote = String.format("https://%s:%s@selenoid.autotests.cloud/wd/hub",
-//                    selenoidLogin, selenoidPassword);
-            String remote = "https://" + selenoidLogin + ":" + selenoidPassword + "@" + url;
-            Configuration.remote = remote;
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920x1080";
+        Configuration.browser = browser;
+        browserVersion = version;
+        String remote = "https://" + login + ":" + password + "@" + url;
+        Configuration.remote = remote;
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("enableVNC", true);
-            capabilities.setCapability("enableVideo", true);
-            Configuration.browserCapabilities = capabilities;
-        }
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
 
-        Attach.attachAsText("Browser: ", browserName);
-        Attach.attachAsText("Version: ", browserVersion);
-        Attach.attachAsText("Remote: ", String.valueOf(config.getRemote()));
-        Attach.attachAsText("Login: ", config.selenoidLogin());
+        Attach.attachAsText("Browser: ", browser);
+        Attach.attachAsText("Version: ", version);
     }
 
     @AfterEach
