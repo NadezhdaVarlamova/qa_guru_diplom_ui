@@ -1,14 +1,15 @@
 # Проект автоматизации тестирования для <a target="_blank" href="https://leroymerlin.ru/">ВкусВилл</a> <img src="img/logo/VV.svg" width="50" height="50"  alt="IDEA"/>
 
 ## :open_book: Содержание:
-- [Технологии и инструменты](#gear-технологии-и-инструменты)
+- [Технологии и инструменты](#gear-в-проекте-используются-следующие-технологии-и-инструменты)
 - [Что проверяем](#heavy_check_mark-что-проверяем)
 - [Запуск тестов из Jenkins](#-запуск-тестов-из-jenkins)
 - [Запуск тестов из терминала](#computer-запуск-тестов-из-терминала)
-- [Отчеты](#bar_chart-отчеты)
+- [Отчеты](#bar_chart-отчеты-о-прохождении-тестов-доступны-в-allure)
 - - [Allure](#-allure)
 - - [Telegram](#-telegram)
 - [Видео с прогоном тестов](#movie_camera-видео-с-прогоном-тестов)
+- [Allure TestOps](#-проект-интегрирован-с-allure-testOps)
 
 ## :gear: В проекте используются следующие технологии и инструменты:
 
@@ -92,7 +93,8 @@ gradle clean test
   <img title="Video" src="img/gif/test.gif">
 </p>
 
-## <img width="3%" title="Allure" src="img/logo/Allure_TO.svg"> Проект интегрирован с Allure TestOps
+## Проект интегрирован с Allure TestOps
+<img width="3%" title="Allure" src="img/logo/Allure_TO.svg"> 
 
 #### Представлены тест-кейсы
 
