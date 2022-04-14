@@ -89,7 +89,7 @@ gradle clean test
 В отчетах Allure для каждого теста прикреплен не только скриншот, но и видео прохождения теста
 
 <p align="center">
-  <img title="Video" src="img/gif/c889306c72f897b1.gif">
+  <img title="Video" src="img/gif/test.mp4">
 </p>
 
 ## <img width="3%" title="Allure" src="img/logo/Allure_TO.svg"> Проект интегрирован с Allure TestOps
