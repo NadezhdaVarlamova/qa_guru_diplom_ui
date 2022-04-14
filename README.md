@@ -92,7 +92,7 @@ gradle clean test
   <img title="Video" src="img/gif/c889306c72f897b1.gif">
 </p>
 
-## <img width="3%" title="Allure" src="img/logo/Allure_TO"> Проект интегрирован с Allure TestOps
+## <img width="3%" title="Allure" src="img/logo/Allure_TO.svg"> Проект интегрирован с Allure TestOps
 
 #### Представлены тест-кейсы
 
