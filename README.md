@@ -68,7 +68,7 @@ gradle clean test
 
 #### Главная страница
 
-<img src="img/screen/AllireMain.jpg" alt="Allure"/>
+<img src="img/screen/AllureMain.jpg" alt="Allure"/>
 
 #### Графики
 
@@ -82,7 +82,7 @@ gradle clean test
 
 Настроена отправка оточета ботом в Telegram
 
-<img src="img/screen/Screenshot_25.jpg" alt="Telegram"/>
+<img src="img/screen/Bot.jpg" alt="Telegram"/>
 
 ## :movie_camera: Видео с прогоном тестов
 
