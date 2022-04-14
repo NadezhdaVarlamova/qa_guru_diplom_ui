@@ -92,5 +92,17 @@ gradle clean test
   <img title="Video" src="img/gif/c889306c72f897b1.gif">
 </p>
 
+## <img width="3%" title="Allure" src="img/logo/Allure_TO"> Проект интегрирован с Allure TestOps
 
+#### Представлены тест-кейсы
+
+<img src="img/screen/TOTest.jpg" alt="TO"/>
+
+#### Представлены дашборды аналитики
+
+<img src="img/screen/TODash.jpg" alt="TO"/>
+
+#### Представлены запуски
+
+<img src="img/screen/TOLaunch.jpg" alt="TO"/>
 
