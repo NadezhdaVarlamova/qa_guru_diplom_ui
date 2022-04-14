@@ -1,4 +1,4 @@
-# Проект автоматизации тестирования для <a target="_blank" href="https://leroymerlin.ru/">ВкусВилл</a> <img src="img/logo/leroy-merlin-logo@logotyp.us.svg" width="50" height="50"  alt="IDEA"/>
+# Проект автоматизации тестирования для <a target="_blank" href="https://leroymerlin.ru/">ВкусВилл</a> <img src="img/logo/VV.svg" width="50" height="50"  alt="IDEA"/>
 
 ## :open_book: Содержание:
 - [Технологии и инструменты](#gear-технологии-и-инструменты)
@@ -10,7 +10,7 @@
 - - [Telegram](#-telegram)
 - [Видео с прогоном тестов](#movie_camera-видео-с-прогоном-тестов)
 
-## :gear: Используемые технологии и инструменты
+## :gear: В проекте используются следующие технологии и инструменты:
 
 <p align="center">
 <img src="img/logo/Idea.svg" width="50" height="50"  alt="IDEA"/>
@@ -29,7 +29,7 @@
 </p>
 
 ## :heavy_check_mark: Описание
-В проекте автоматизирована проверка главной страницы, а также отображение попапа адреса доставки при добавлении товара в корзину и поиск. Использован паттерн проектирования автотестов PageObject.
+В проекте автоматизирована проверка главной страницы сайта ВкусВилл, а также отображение попапа адреса доставки при добавлении товара в корзину и поиск. Использован паттерн проектирования автотестов PageObject.
 
 ## :heavy_check_mark: Что проверяем
 
@@ -53,31 +53,30 @@
 > - BROWSER (браузер)
 > - VERSION (версия браузера)
 > - RESOLUTION (размер окна браузера)
-> - BROWSER_MOBILE (мобильный браузер)
-> - BASEURL (фдрес сайта)
+> - BASEURL (адрес сайта)
 
 ## :computer: Запуск тестов из терминала
 
-Команда для локального запуска:
+Для локального запуска необходимо выполнить команду:
 ```
 gradle clean test
 ```
 
-## :bar_chart: Отчеты
+## :bar_chart: Отчеты о прохождении тестов доступны в Allure
 
 ### <img width="3%" title="Allure" src="img/logo/Allure.svg"> Allure
 
 #### Главная страница
 
-<img src="img/screen/Screenshot_22.jpg" alt="Allure"/>
+<img src="img/screen/AllireMain.jpg" alt="Allure"/>
 
 #### Графики
 
-<img src="img/screen/Screenshot_24.jpg" alt="Allure"/>
+<img src="img/screen/AllureGraph.jpg" alt="Allure"/>
 
 #### Тесты
 
-<img src="img/screen/Screenshot_23.jpg" alt="Allure"/>
+<img src="img/screen/AllureTests.jpg" alt="Allure"/>
 
 ### <img width="3%" title="Telegram" src="img/logo/Telegram.svg"> Telegram
 
