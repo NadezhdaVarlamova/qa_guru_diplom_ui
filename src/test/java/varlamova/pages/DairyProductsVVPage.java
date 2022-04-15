@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class DairyProductsVVPage {
     SelenideElement
             addCartButton = $x("(//span[@class=\"CartButton__inner\"])[1]"),
+            cookieCloseButton = $x("//button[@class=\"Cookie__close js-cookie-warning-close\"]"),
             popapText = $x("(//div[contains(text(), 'Выберите способ получения')])[2]");
 
     @Step("Открыть страницу каталога Молочные продукты")
@@ -21,6 +22,7 @@ public class DairyProductsVVPage {
     @Step("Добавить в корзину товар")
     public void addProductToCart ()
     {
+        cookieCloseButton.click();
         addCartButton.click();
     }
 
