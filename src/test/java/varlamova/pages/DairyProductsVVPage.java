@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class DairyProductsVVPage {
     SelenideElement
-            addCartButton = $x("(//span[@class=\"CartButton__inner\"])[1]"),
+            addCartButton = $x("(//button[@class=\"CartButton__content CartButton__content--add js-delivery__basket--add\"])[1]"),
             cookieCloseButton = $x("//button[@class=\"Cookie__close js-cookie-warning-close\"]"),
             popapText = $x("(//div[contains(text(), 'Выберите способ получения')])[2]");
 
