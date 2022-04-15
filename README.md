@@ -1,4 +1,4 @@
-# Проект автоматизации тестирования для <a target="_blank" href="https://leroymerlin.ru/">ВкусВилл</a> <img src="img/logo/VV.svg" width="50" height="50"  alt="IDEA"/>
+# Проект автоматизации тестирования для <a target="_blank" href="https://vkusvill.ru/">ВкусВилл</a> <img src="img/logo/VV.svg" width="50" height="50"  alt="IDEA"/>
 
 ## :open_book: Содержание:
 - [Технологии и инструменты](#gear-в-проекте-используются-следующие-технологии-и-инструменты)
