@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class DairyProductsPage {
     SelenideElement
-            addCartButton = $("button.CartButton__content.CartButton__content--add.js-delivery__basket--add", 1),
+            addCartButton = $("div.ProductCard__cartFooter", 1),
             cookieCloseButton = $("button.Cookie__close.js-cookie-warning-close"),
             popupText = $(byText("Выберите способ получения"));
 

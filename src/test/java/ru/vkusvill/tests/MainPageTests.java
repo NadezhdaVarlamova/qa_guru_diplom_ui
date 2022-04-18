@@ -43,8 +43,6 @@ public class MainPageTests extends TestBase {
                 .openPage()
                 .catalogButtonClick();
         mainPage
-                .catalogButtonClick();
-        mainPage
                 .checkPageUrl("https://vkusvill.ru/goods/");
     }
 

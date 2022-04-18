@@ -12,7 +12,7 @@ public class DairyProductsPageTests extends TestBase {
     @Story("Страница каталога Молочные продукты")
     @Feature("UI тесты vkusvill.ru")
     @Severity(SeverityLevel.BLOCKER)
-    @DisplayName("Проверка отображения попапа доставки при добавлении товара в корзину")
+    @DisplayName("Проверка отображения попапа авторизации при добавлении товара в корзину")
     void addProductToCartTest() {
         dairyProductsPage
                 .openPage()
