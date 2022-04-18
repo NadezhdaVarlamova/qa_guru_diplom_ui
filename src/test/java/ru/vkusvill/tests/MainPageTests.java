@@ -3,7 +3,6 @@ package ru.vkusvill.tests;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.vkusvill.pages.SearchPage;
 
 public class MainPageTests extends TestBase {
     @Test
