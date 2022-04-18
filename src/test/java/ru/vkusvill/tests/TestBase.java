@@ -1,33 +1,39 @@
-package varlamova.tests;
+package ru.vkusvill.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-import varlamova.config.TestsConfig;
-import varlamova.helpers.Attach;
+import ru.vkusvill.config.TestsConfig;
+import ru.vkusvill.helpers.Attach;
+import ru.vkusvill.pages.DairyProductsPage;
+import ru.vkusvill.pages.MainPage;
+import ru.vkusvill.pages.SearchPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
-    @BeforeAll
-    static void setUp(){TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
+    MainPage mainPage = new MainPage();
+    DairyProductsPage dairyProductsPage = new DairyProductsPage();
+    SearchPage searchPage = new SearchPage();
 
-        String browserName = String.valueOf(config.getBrowser());
-        String browserVersion = config.getBrowserVersion();
-        String browserResolution = config.getResolution();
+    @BeforeAll
+    static void setUp() {
+        TestsConfig config = ConfigFactory.create(TestsConfig.class, System.getProperties());
+
+        String browserName = String.valueOf(config.browser());
+        String browserVersion = config.version();
+        String browserResolution = config.resolution();
 
         Configuration.browser = browserName;
         Configuration.browserVersion = browserVersion;
-        Configuration.baseUrl = config.getBaseUrl();
+        Configuration.baseUrl = config.baseUrl();
         Configuration.browserSize = browserResolution;
 
-        if (config.getRemote()){
+        if (config.remote()) {
             String selenoidLogin = config.selenoidLogin(),
                     selenoidPassword = config.selenoidPassword();
 
@@ -42,7 +48,7 @@ public class TestBase {
 
         Attach.attachAsText("Browser: ", browserName);
         Attach.attachAsText("Version: ", browserVersion);
-        Attach.attachAsText("Remote: ", String.valueOf(config.getRemote()));
+        Attach.attachAsText("Remote: ", String.valueOf(config.remote()));
         Attach.attachAsText("Login: ", config.selenoidLogin());
     }
 

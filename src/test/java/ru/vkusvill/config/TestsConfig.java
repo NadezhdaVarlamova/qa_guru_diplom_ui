@@ -1,29 +1,25 @@
-package varlamova.config;
+package ru.vkusvill.config;
 
 import org.aeonbits.owner.Config;
 
 @Config.Sources("classpath:credentials.properties")
 public interface TestsConfig extends Config {
     String selenoidLogin();
+
     String selenoidPassword();
 
-    @Key("browser")
     @DefaultValue("CHROME")
-    Browser getBrowser();
+    String browser();
 
-    @Key("version")
     @DefaultValue("99.0")
-    String getBrowserVersion();
+    String version();
 
-    @Key("baseUrl")
-    @DefaultValue("https://vkusvill.ru/")
-    String getBaseUrl();
+    @DefaultValue("https://vkusvill.ru")
+    String baseUrl();
 
-    @Key("resolution")
     @DefaultValue("1920x1080")
-    String getResolution();
+    String resolution();
 
-    @Key("remote")
     @DefaultValue("false")
-    boolean getRemote();
+    boolean remote();
 }

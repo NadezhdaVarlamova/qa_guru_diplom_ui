@@ -1,16 +1,15 @@
-package varlamova.pages;
+package ru.vkusvill.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MainVVPage {
+public class MainPage {
     SelenideElement
             promoButton = $x("//a[@href=\"/bonuses/\"]"),
             shopButton = $x("//a[@href=\"/dostavka/\"]"),
@@ -20,45 +19,41 @@ public class MainVVPage {
 
 
     @Step("Открыть главную страницу.")
-    public MainVVPage openPage(){
-        open("https://vkusvill.ru/");
+    public MainPage openPage() {
+        open("/");
         return this;
     }
 
     @Step("Кликнуть на вкладку 'Акции'")
-    public void promoButtonClick ()
-    {
+    public void promoButtonClick() {
         promoButton.click();
     }
 
     @Step("Кликнуть на вкладку 'Магазины'")
-    public void shopButtonClick ()
-    {
+    public void shopButtonClick() {
         shopButton.click();
     }
 
     @Step("Нажать Да в попапе города")
-    public void clickYes ()
-    {if(yesButton.isDisplayed()) {
-        yesButton.click();
+    public void clickYes() {
+        if (yesButton.isDisplayed()) {
+            yesButton.click();
         }
     }
 
     @Step("Кликнуть на 'Каталог'")
-    public void catalogButtonClick ()
-    {
+    public void catalogButtonClick() {
         catalogButton.click();
     }
 
     @Step("Проверить редирект на страницу {url}")
-    public void pageUrl (String url){
+    public void checkPageUrl(String url) {
         String urlPage = WebDriverRunner.url();
         assertEquals(urlPage, url);
     }
 
     @Step("Ввести в поиск запрос {}")
-    public void catalogButtonClick (String product)
-    {
+    public void catalogButtonClick(String product) {
         search.setValue(product);
         search.pressEnter();
     }

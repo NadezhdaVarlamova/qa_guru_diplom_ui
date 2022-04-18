@@ -1,4 +1,4 @@
-package varlamova.helpers;
+package ru.vkusvill.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
@@ -47,9 +47,8 @@ public class Attach {
 
     public static URL getVideoUrl(String sessionId) {
         String videoUrl = "https://selenoid.autotests.cloud/video/" + sessionId + ".mp4";
-
+        System.out.println(videoUrl);
         try {
-            System.out.println(videoUrl);
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -57,7 +56,7 @@ public class Attach {
         return null;
     }
 
-    public static String getSessionId(){
+    public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 

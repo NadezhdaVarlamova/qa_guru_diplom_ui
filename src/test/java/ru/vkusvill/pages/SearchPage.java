@@ -1,18 +1,16 @@
-package varlamova.pages;
+package ru.vkusvill.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
 
-public class SearchVVPage {
-    SelenideElement
-            h1SearchPage = $(".VV21_SearchPage__Title");
+public class SearchPage {
+    SelenideElement h1SearchPage = $(".VV21_SearchPage__Title");
 
     @Step("Проверить отображение заголовка")
-    public void checkH1(String product)
+    public void checkHeadingSearch(String product)
     {
         h1SearchPage.shouldHave(Condition.text(product));
     }
